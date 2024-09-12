@@ -1,0 +1,136 @@
+body {
+  margin: 0;
+  font-family: 'League Spartan', sans-serif;
+  background-color: #0a1f44;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url("../img/FONDO-WEB.png");
+  background-size: cover;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 20px 0;
+}
+.menu-icon {
+  display: none;
+  font-size: 2em;
+  cursor: pointer;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+nav ul li {
+  margin: 0 15px;
+}
+nav ul li a {
+  color: #0a1f44;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 20px;
+  background-color: #E5E5E5;
+  font-size: 1.6em;
+  font-weight: 700;
+}
+nav ul li a:hover {
+  background-color: #d4d4d4;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  flex: 1;
+}
+.text-content {
+  text-align: left;
+  max-width: 50%;
+}
+.text-content h1 {
+  font-size: 5em;
+  margin: 0;
+  font-weight: 700;
+}
+.text-content h2 {
+  font-size: 5em;
+  margin: 0;
+  font-weight: 700;
+}
+.text-content p {
+  font-size: 1.8em;
+  margin: 10px 0;
+  color: #476bb6;
+}
+.profile-pic {
+  border-radius: 50%;
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  margin-left: 50px;
+}
+footer {
+  font-size: 1.3em;
+  padding: 20px 0;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  margin-top: auto;
+  position: sticky;
+  bottom: 0;
+}
+footer p {
+  flex: 1;
+  text-align: center;
+}
+footer a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+@media (max-width: 1100px) {
+  nav {
+      justify-content: space-between;
+  }
+  nav ul {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+  }
+  nav ul li {
+      margin: 10px 0;
+  }
+  nav ul li a {
+      padding: 15px 30px;
+      border-radius: 0;
+      background-color: transparent;
+      color: white;
+  }
+  .menu-icon {
+      display: block;
+  }
+  .show-menu {
+      display: flex !important;
+  }
+  .content {
+      flex-direction: column;
+      text-align: center;
+  }
+  .text-content {
+      max-width: 100%;
+      text-align: center;
+  }
+  .profile-pic {
+      margin: 20px 0;
+  }
+}
