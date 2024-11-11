@@ -1,100 +1,333 @@
 <html>
- <head>
-  <title>
-   Facundo Molina
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&amp;display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="CSS/STYLE_SOBREMI.css">
-  <script>
-    function toggleMenu() {
-             const menu = document.querySelector('nav ul');
-             menu.classList.toggle('show-menu');
-         }
-   </script>
- <body>
-  <nav>
-   <div class="menu-icon" onclick="toggleMenu()">
-    <i class="fas fa-bars">
-    </i>
-   </div>
-   <ul>
-    <li>
-    <a href="index.html">
-      Inicio
-     </a>
-    </li>
-    <li>
-     <a href="sobre-mi.html">
-      Sobre mi
-     </a>
-    </li>
-    <li>
-     <a href="portafolio.html">
-      Portafolio
-     </a>
-    </li>
-    <li>
-    <a href="cv/FACUNDO_MOLINA_2024 (1).pdf" target="_blank">
-      CV
-     </a>
-    </li>
-    <li>
-     <a href="servicios.html">
-      Servicios
-     </a>
-    </li>
-    <li>
-     <a href="contacto.html">
-      Contacto
-     </a>
-    </li>
-   </ul>
-  </nav>
+<head>
+    <title>Facundo Molina</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'League Spartan', sans-serif;
+            background-color: #0d1b2a;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-image: url("../img/FONDO-WEB.png");
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #1b263b;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .navbar a {
+            color: #000000;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            flex-grow: 1;
+        }
+        .top-row {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+        .left, .right {
+            width: 48%;
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .full-width {
+            width: 100%;
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .box {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 20px;
+            color: #000000;
+            margin-bottom: 20px;
+            flex: 1;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+        .box h2 {
+            color: #14213d;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 20px;
+            text-align: left;
+            font-size: 1.4em;
+            margin-left: 10px;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        .box p, .box ul {
+            color: #000000;
+            text-align: left;
+            font-size: 1em;
+            margin-left: 10px;
+        }
+        .box ul {
+            padding-left: 20px;
+        }
+        @media (max-width: 1100px) {
+            .left, .right, .full-width {
+                width: 100%;
+                margin: 10px 0;
+            }
+            .box p, .box ul {
+                font-size: 0.9em;
+            }
+            .box h2 {
+                font-size: 1.2em;
+            }
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 20px 0;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #0a1f44;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 20px;
+            background-color: #E5E5E5;
+            font-size: 1.6em;
+            font-weight: 700;
+        }
+        nav ul li a:hover {
+            background-color: #d4d4d4;
+        }
+        footer {
+            font-size: 1.3em;
+            padding: 20px 0;
+            color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+            margin-top: auto;
+            position: sticky;
+            bottom: 0;
+        }
+        footer p {
+            flex: 1;
+            text-align: center;
+        }
+        footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .technologies {
+            text-align: center;
+            margin-bottom: 50px;
+            background-color: rgba(16, 100, 172, 0.5);
+            padding: 20px; 
+            border-radius: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-  <div class="content">
-    <div class="left">
-        <div class="box" style="margin-top: 0; flex: 0.4;">
-            <h2>BIOGRAFIA</h2>
-            <p>Profesional en constante crecimiento, con 3 años de experiencia, actualmente cursando la Licenciatura en Gestión de Tecnología de la Información. Mi experiencia práctica me permite abordar proyectos desde una perspectiva integral, combinando conocimientos técnicos con habilidades de gestión.</p>
+        .technologies h2 {
+            font-size: 1.5em; 
+            margin-bottom: 20px;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .technologies .icons {
+            display: flex;
+            justify-content: center;
+            gap: 10px; 
+            flex-wrap: wrap;
+        }
+
+        .technologies .icons .icon {
+            padding: 10px; 
+            border-radius: 50px;
+            margin: 10px;
+        }
+
+        .technologies .icons img {
+            width: 100px; 
+            height: 80px; 
+        }    
+    
+        @media (max-width: 1100px) {
+            nav {
+                justify-content: space-between;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            nav ul li a {
+                padding: 15px 30px;
+                border-radius: 0;
+                background-color: transparent;
+                color: white;
+            }
+            footer {
+                position: sticky;
+                bottom: 0;
+            }
+            .content {
+                overflow-y: auto;
+            }
+            .menu-icon {
+                display: block;
+            }
+            .show-menu {
+                display: flex !important;
+            }
+            .technologies {
+                padding: 10px; 
+            }
+            .technologies .icons .icon {
+                padding: 5px;
+            }
+            .technologies .icons img {
+                width: 80px;
+                height: 70px; 
+            }
+        }
+    </style>
+    <script>
+        // Esta función alterna la visibilidad de un menú de navegación.
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul'); // Selecciona el elemento 'nav ul'.
+            menu.classList.toggle('show-menu'); // Alterna la clase 'show-menu' en el elemento 'nav ul'.
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
         </div>
-        <div class="box" style="flex: 0.6;">
-            <h2>OBJETIVOS PROFESIONALES</h2>
-            <p>Como apasionado de la tecnología, busco desempeñarme en un entorno innovador donde pueda aplicar mis conocimientos y habilidades para desarrollar soluciones tecnológicas que generen un impacto positivo en la vida de las personas. Mi objetivo es formar parte de equipos multidisciplinarios y colaborar en proyectos desafiantes que me permitan crecer profesionalmente y contribuir al éxito de la empresa. Me motiva la posibilidad de trabajar con tecnologías de vanguardia y participar en todas las etapas del ciclo de vida del desarrollo de software, desde el diseño hasta la implementación. Valoro profundamente el trabajo en equipo, la colaboración y el aprendizaje continuo.</p>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="sobre-mi.html">Sobre mi</a></li>
+            <li><a href="portafolio.html">Portafolio</a></li>
+            <li><a href="cv/FACUNDO_MOLINA_2024 (1).pdf" target="_blank">CV</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+    <div class="main-container">
+        <div class="content">
+            <div class="top-row">
+                <div class="left">
+                    <div class="box" style="margin-top: 0;">
+                        <h2>BIOGRAFIA</h2>
+                        <p>Profesional en constante crecimiento, con 3 años de experiencia, actualmente cursando la Licenciatura en Gestión de Tecnología de la Información. Mi experiencia práctica me permite abordar proyectos desde una perspectiva integral, combinando conocimientos técnicos con habilidades de gestión.</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="box">
+                        <h2>OBJETIVOS PROFESIONALES</h2>
+                        <p>Como apasionado de la tecnología, busco desempeñarme en un entorno innovador donde pueda aplicar mis conocimientos y habilidades para desarrollar soluciones tecnológicas que generen un impacto positivo en la vida de las personas. Mi objetivo es formar parte de equipos multidisciplinarios y colaborar en proyectos desafiantes que me permitan crecer profesionalmente y contribuir al éxito de la empresa. Me motiva la posibilidad de trabajar con tecnologías de vanguardia y participar en todas las etapas del ciclo de vida del desarrollo de software, desde el diseño hasta la implementación. Valoro profundamente el trabajo en equipo, la colaboración y el aprendizaje continuo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="full-width">
+                <div class="box">
+                    <h2>FORMACIÓN ACADÉMICA Y EXPERIENCIA RELEVANTE</h2>
+                    <p>Soy un profesional en constante crecimiento, actualmente cursando la Licenciatura en Gestión de Tecnología de la Información. Mi formación académica me ha proporcionado una base sólida en los fundamentos de la informática, incluyendo programación, bases de datos y arquitectura de software. Además de mi formación universitaria, soy Técnico Mecánico con especialización en máquinas herramienta, lo que me ha otorgado habilidades en diseño asistido por computadora (CAD) y control numérico (CNC), complementando así mi perfil técnico.</p>
+                    <p>Mi experiencia profesional se ha desarrollado en dos ámbitos principales. En primer lugar, trabajé como pasante en Claro, donde adquirí conocimientos prácticos en redes y telecomunicaciones. Durante esta etapa, participé en la implementación y mantenimiento de redes internacionales, gestionando plataformas de diversos proveedores y resolviendo incidentes.</p>
+                    <p>Posteriormente, me incorporé a Globallogic como desarrollador backend, donde he participado en proyectos de gran envergadura. Mis responsabilidades han incluido el desarrollo y mantenimiento de aplicaciones utilizando tecnologías como Java, Spring Boot y bases de datos relacionales. Además, he colaborado estrechamente con equipos multidisciplinarios para garantizar la entrega exitosa de los proyectos.</p>
+                    <p>A lo largo de mi trayectoria profesional, he desarrollado un amplio conjunto de habilidades técnicas, que incluyen:</p>
+                    <ul>
+                        <li>Desarrollo: Java, Spring Boot, Python, SQL, PL/SQL</li>
+                        <li>Herramientas: JDeveloper, Jira, Git, Jenkins, Postman, SOAP UI, UML, Maven</li>
+                        <li>Bases de datos: Oracle, SQL Server</li>
+                        <li>Tecnologías: SOA, RESTful APIs, Microservicios</li>
+                        <li>Otras: CAD (AutoCAD, Autodesk Inventor), CNC, redes (TCP/IP, VoIP)</li>
+                    </ul>
+                    <p>Durante mi recorrido profesional, he logrado consolidar una sólida experiencia en el desarrollo de software y la resolución de problemas complejos. En Globallogic, fui responsable de implementar mejoras significativas en aplicaciones existentes, optimizando su rendimiento y añadiendo nuevas funcionalidades. Además, participé activamente en la resolución de incidentes críticos, garantizando la continuidad de los servicios. Mi experiencia en Claro me permitió adquirir sólidos conocimientos en redes y telecomunicaciones, implementando soluciones de alta disponibilidad y resolviendo problemas en entornos complejos. A lo largo de mi carrera, he demostrado mi capacidad para adaptarme a nuevas tecnologías y trabajar en equipos multidisciplinarios, contribuyendo al éxito de los proyectos en los que he participado.</p>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="right">
-        <div class="box">
-            <h2>FORMACIÓN ACADÉMICA Y EXPERIENCIA RELEVANTE</h2>
-            <p>Soy un profesional en constante crecimiento, actualmente cursando la Licenciatura en Gestión de Tecnología de la Información. Mi formación académica me ha proporcionado una base sólida en los fundamentos de la informática, incluyendo programación, bases de datos y arquitectura de software. Además de mi formación universitaria, soy Técnico Mecánico con especialización en máquinas herramienta, lo que me ha otorgado habilidades en diseño asistido por computadora (CAD) y control numérico (CNC), complementando así mi perfil técnico.</p>
-            <p>Mi experiencia profesional se ha desarrollado en dos ámbitos principales. En primer lugar, trabajé como pasante en Claro, donde adquirí conocimientos prácticos en redes y telecomunicaciones. Durante esta etapa, participé en la implementación y mantenimiento de redes internacionales, gestionando plataformas de diversos proveedores y resolviendo incidentes.</p>
-            <p>Posteriormente, me incorporé a Globallogic como desarrollador backend, donde he participado en proyectos de gran envergadura. Mis responsabilidades han incluido el desarrollo y mantenimiento de aplicaciones utilizando tecnologías como Java, Spring Boot y bases de datos relacionales. Además, he colaborado estrechamente con equipos multidisciplinarios para garantizar la entrega exitosa de los proyectos.</p>
-            <p>A lo largo de mi trayectoria profesional, he desarrollado un amplio conjunto de habilidades técnicas, que incluyen:</p>
-            <ul>
-                <li>Desarrollo: Java, Spring Boot, Python, SQL, PL/SQL</li>
-                <li>Herramientas: JDeveloper, Jira, Git, Jenkins, Postman, SOAP UI, UML, Maven</li>
-                <li>Bases de datos: Oracle, SQL Server</li>
-                <li>Tecnologías: SOA, RESTful APIs, Microservicios</li>
-                <li>Otras: CAD (AutoCAD, Autodesk Inventor), CNC, redes (TCP/IP, VoIP)</li>
-            </ul>
-            <p>Durante mi recorrido profesional, he logrado consolidar una sólida experiencia en el desarrollo de software y la resolución de problemas complejos. En Globallogic, fui responsable de implementar mejoras significativas en aplicaciones existentes, optimizando su rendimiento y añadiendo nuevas funcionalidades. Además, participé activamente en la resolución de incidentes críticos, garantizando la continuidad de los servicios. Mi experiencia en Claro me permitió adquirir sólidos conocimientos en redes y telecomunicaciones, implementando soluciones de alta disponibilidad y resolviendo problemas en entornos complejos. A lo largo de mi carrera, he demostrado mi capacidad para adaptarme a nuevas tecnologías y trabajar en equipos multidisciplinarios, contribuyendo al éxito de los proyectos en los que he participado.</p>
+    <div class="technologies">
+        <h2>
+         SKILLS
+        </h2>
+        <div class="icons">
+         <div class="icon">
+           <img alt="Python logo" height="306" src="img/python.png" width="274"/>
+         </div>
+         <div class="icon">
+           <img alt="Java logo" height="306" src="img/java.png" width="274"/>
+         </div>
+         <div class="icon">
+           <img alt="Spring Boot logo" height="306" src="img/springboot.png" width="274"/>
+         </div>
+         <div class="icon">
+           <img alt="Oracle Database logo" height="306" src="img/oracle-database logo.png" width="274"/>
+         </div>
         </div>
-    </div>
-</div>
-  <footer>
-   <p>
-    © 2024 Molina Facundo Todos los derechos reservados.
-   </p>
-   <div>
-    <a href="https://www.linkedin.com/in/facundo-molina-340783176/" target="_blank">
-     <i class="fab fa-linkedin">
-     </i>
-    </a>
-    <a href="https://www.github.com/facMolina" target="_blank">
-     <i class="fab fa-github">
-     </i>
-    </a>
-   </div>
-  </footer>
- </body>
+       </div>
+    <footer>
+        <p>© 2024 Molina Facundo Todos los derechos reservados.</p>
+        <div>
+            <a href="https://www.linkedin.com/in/facundo-molina-340783176/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.github.com/facMolina" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+</body>
 </html>

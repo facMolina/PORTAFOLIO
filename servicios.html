@@ -1,99 +1,276 @@
 <html>
- <head>
-  <title>
-   Facundo Molina
-  </title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&amp;display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="CSS/STYLE_SERVICIOS.css">
-  <script>
-    function toggleMenu() {
-             const menu = document.querySelector('nav ul');
-             menu.classList.toggle('show-menu');
-         }
-   </script>
- <body>
-  <nav>
-   <div class="menu-icon" onclick="toggleMenu()">
-    <i class="fas fa-bars">
-    </i>
-   </div>
-   <ul>
-    <li>
-    <a href="index.html">
-      Inicio
-     </a>
-    </li>
-    <li>
-     <a href="sobre-mi.html">
-      Sobre mi
-     </a>
-    </li>
-    <li>
-     <a href="portafolio.html">
-      Portafolio
-     </a>
-    </li>
-    <li>
-      <a href="cv/FACUNDO_MOLINA_2024 (1).pdf" target="_blank">
-      CV
-     </a>
-    </li>
-    <li>
-     <a href="servicios.html">
-      Servicios
-     </a>
-    </li>
-    <li>
-     <a href="contacto.html">
-      Contacto
-     </a>
-    </li>
-   </ul>
-  </nav>
+<head>
+    <title>Facundo Molina</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'League Spartan', sans-serif;
+            background-color: #0a1f44;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-image: url("../img/FONDO-WEB.png");
+            background-size: cover;
+        }
 
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 20px 0;
+        }
 
-  <div class="container main-container">
-    <div class="content">
-        <div class="left">
-            <div class="box">
-                <h2>LISTA DE SERVICIOS</h2>
-                <p><strong>Desarrollo de microservicios en Java con Spring Boot:</strong> Diseño, implementación y mantenimiento de arquitecturas de microservicios escalables y robustas. Como desarrollador backend especializado, me encargo de diseñar y construir microservicios utilizando el framework Spring Boot. Esta arquitectura modular permite una mayor escalabilidad, facilidad de mantenimiento y actualizaciones más rápidas.</p>
-                <p><strong>Optimización de rendimiento:</strong> Identificación y resolución de cuellos de botella en aplicaciones existentes, mejorando significativamente su rendimiento y escalabilidad. Mi experiencia me permite identificar y resolver problemas de rendimiento en aplicaciones existentes. A través de técnicas de profiling, análisis de código y optimización de consultas a bases de datos, logro mejorar significativamente la velocidad y la capacidad de respuesta de las aplicaciones.</p>
-                <p><strong>Integración de sistemas:</strong> Conexión de diferentes sistemas y aplicaciones mediante el uso de APIs y protocolos estándar. Soy experto en la integración de diferentes sistemas y aplicaciones, utilizando APIs y protocolos estándar. Esto permite a las empresas conectar sus sistemas existentes y crear soluciones más completas y eficientes.</p>
-                <p><strong>Mantenimiento y soporte:</strong> Soporte continuo para garantizar la estabilidad y el buen funcionamiento de las aplicaciones. Ofrezco un servicio de mantenimiento y soporte continuo para garantizar la estabilidad y el buen funcionamiento de las aplicaciones en producción. Esto incluye la resolución de incidencias, la aplicación de parches de seguridad y la implementación de nuevas funcionalidades.</p>
-            </div>
+        .menu-icon {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #0a1f44;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 20px;
+            background-color: #E5E5E5;
+            font-size: 1.6em;
+            font-weight: 700;
+        }
+
+        nav ul li a:hover {
+            background-color: #d4d4d4;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            height: calc(100vh - 160px);
+            flex-grow: 1;
+        }
+
+        .left, .right {
+            width: 45%;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .box {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 20px;
+            color: #000000;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .box h2 {
+            color: #14213d;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 1.4em;
+            margin: 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .box h2 .arrow {
+            transition: transform 0.3s;
+        }
+
+        .box .content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .box p, .box ul {
+            color: #000000;
+            text-align: justify;
+            font-size: 1.1em;
+            margin-left: 10px;
+        }
+
+        .box ul {
+            padding-left: 20px;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        footer {
+            font-size: 1.3em;
+            padding: 20px 0;
+            color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+            margin-top: auto;
+            position: sticky;
+            bottom: 0;
+        }
+
+        footer p {
+            flex: 1;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 1100px) {
+            nav {
+                justify-content: space-between;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            nav ul li a {
+                padding: 15px 30px;
+                border-radius: 0;
+                background-color: transparent;
+                color: white;
+            }
+            .menu-icon {
+                display: block;
+            }
+            .show-menu {
+                display: flex !important;
+            }
+            .left, .right {
+                width: 100%;
+                margin: 10px 0;
+            }
+            .box p, .box ul {
+                font-size: 0.9em;
+            }
+            .box h2 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+<script>
+        // Esta función alterna la visibilidad de un menú de navegación.
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul'); // Selecciona el elemento 'nav ul'.
+            menu.classList.toggle('show-menu'); // Alterna la clase 'show-menu' en el elemento 'nav ul'.
+        }
+
+        // Este event listener espera a que el DOM esté completamente cargado antes de ejecutarse.
+        document.addEventListener('DOMContentLoaded', function() {
+            const collapsibles = document.querySelectorAll('.box h2'); // Selecciona todos los elementos con la clase 'box h2'.
+            collapsibles.forEach(collapsible => {
+                collapsible.addEventListener('click', function() {
+                    const content = this.nextElementSibling; // Selecciona el siguiente elemento hermano.
+                    const arrow = this.querySelector('.arrow'); // Selecciona el icono de flecha dentro del elemento 'h2'.
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null; // Colapsa el contenido si está expandido.
+                        arrow.style.transform = "rotate(0deg)"; // Rota la flecha a su posición original.
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px"; // Expande el contenido.
+                        arrow.style.transform = "rotate(180deg)"; // Rota la flecha para indicar el estado expandido.
+                    }
+                });
+            });
+        });    
+</script>
+</head>
+<body>
+    <nav>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
         </div>
-        <div class="right">
-            <div class="box">
-                <h2>¿CÓMO PUEDO AYUDAR A LOS CLIENTES O EMPLEADORES?</h2>
-                <p><strong>Mayor escalabilidad:</strong> Las arquitecturas de microservicios permiten escalar las aplicaciones de manera independiente, adaptándose a las demandas cambiantes del negocio.</p>
-                <p><strong>Mayor flexibilidad:</strong> Los microservicios facilitan la implementación de nuevas funcionalidades y la adaptación a los cambios del mercado.</p>
-                <p><strong>Reducción de costos:</strong> Al optimizar el rendimiento y la eficiencia de las aplicaciones, se reducen los costos operativos.</p>
-                <p><strong>Mayor calidad del software:</strong> Un desarrollo de software de alta calidad garantiza la estabilidad y la fiabilidad de las aplicaciones.</p>
-                <h2>¿QUÉ ME DIFERENCIA DE LA COMPETENCIA?</h2>
-                <p>Mi capacidad para resolver problemas complejos de manera eficiente y creativa, combinada con mi profundo conocimiento de las tecnologías Java y Spring Boot, me permite ofrecer soluciones personalizadas y de alta calidad. Además, mi proactividad y compromiso con la excelencia me convierten en un colaborador valioso para cualquier equipo de desarrollo.</p>
-                <h2>¿QUÉ HACE QUE TU PRODUCTO O SERVICIO SEA ÚNICO?</h2>
-                <p>Mi enfoque se centra en brindar soluciones a medida que se adapten a las necesidades específicas de cada cliente. Además, mi experiencia en la optimización de rendimiento y la integración de sistemas me permite ofrecer soluciones completas y eficientes.</p>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="sobre-mi.html">Sobre mi</a></li>
+            <li><a href="portafolio.html">Portafolio</a></li>
+            <li><a href="cv/FACUNDO_MOLINA_2024 (1).pdf" target="_blank">CV</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+    <div class="container main-container">
+        <div class="content">
+            <div class="left">
+                <div class="box">
+                    <h2>LISTA DE SERVICIOS <i class="fas fa-chevron-down arrow"></i></h2>
+                    <div class="content">
+                        <p><strong>Desarrollo de microservicios en Java con Spring Boot:</strong> Diseño, implementación y mantenimiento de arquitecturas de microservicios escalables y robustas. Como desarrollador backend especializado, me encargo de diseñar y construir microservicios utilizando el framework Spring Boot. Esta arquitectura modular permite una mayor escalabilidad, facilidad de mantenimiento y actualizaciones más rápidas.</p>
+                        <p><strong>Optimización de rendimiento:</strong> Identificación y resolución de cuellos de botella en aplicaciones existentes, mejorando significativamente su rendimiento y escalabilidad. Mi experiencia me permite identificar y resolver problemas de rendimiento en aplicaciones existentes. A través de técnicas de profiling, análisis de código y optimización de consultas a bases de datos, logro mejorar significativamente la velocidad y la capacidad de respuesta de las aplicaciones.</p>
+                        <p><strong>Integración de sistemas:</strong> Conexión de diferentes sistemas y aplicaciones mediante el uso de APIs y protocolos estándar. Soy experto en la integración de diferentes sistemas y aplicaciones, utilizando APIs y protocolos estándar. Esto permite a las empresas conectar sus sistemas existentes y crear soluciones más completas y eficientes.</p>
+                        <p><strong>Mantenimiento y soporte:</strong> Soporte continuo para garantizar la estabilidad y el buen funcionamiento de las aplicaciones. Ofrezco un servicio de mantenimiento y soporte continuo para garantizar la estabilidad y el buen funcionamiento de las aplicaciones en producción. Esto incluye la resolución de incidencias, la aplicación de parches de seguridad y la implementación de nuevas funcionalidades.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="box">
+                    <h2>¿CÓMO PUEDO AYUDAR A LOS CLIENTES O EMPLEADORES? <i class="fas fa-chevron-down arrow"></i></h2>
+                    <div class="content">
+                        <p><strong>Mayor escalabilidad:</strong> Las arquitecturas de microservicios permiten escalar las aplicaciones de manera independiente, adaptándose a las demandas cambiantes del negocio.</p>
+                        <p><strong>Mayor flexibilidad:</strong> Los microservicios facilitan la implementación de nuevas funcionalidades y la adaptación a los cambios del mercado.</p>
+                        <p><strong>Reducción de costos:</strong> Al optimizar el rendimiento y la eficiencia de las aplicaciones, se reducen los costos operativos.</p>
+                        <p><strong>Mayor calidad del software:</strong> Un desarrollo de software de alta calidad garantiza la estabilidad y la fiabilidad de las aplicaciones.</p>
+                    </div>
+                    <h2>¿QUÉ ME DIFERENCIA DE LA COMPETENCIA? <i class="fas fa-chevron-down arrow"></i></h2>
+                    <div class="content">
+                        <p>Mi capacidad para resolver problemas complejos de manera eficiente y creativa, combinada con mi profundo conocimiento de las tecnologías Java y Spring Boot, me permite ofrecer soluciones personalizadas y de alta calidad. Además, mi proactividad y compromiso con la excelencia me convierten en un colaborador valioso para cualquier equipo de desarrollo.</p>
+                    </div>
+                    <h2>¿QUÉ HACE QUE TU PRODUCTO O SERVICIO SEA ÚNICO? <i class="fas fa-chevron-down arrow"></i></h2>
+                    <div class="content">
+                        <p>Mi enfoque se centra en brindar soluciones a medida que se adapten a las necesidades específicas de cada cliente. Además, mi experiencia en la optimización de rendimiento y la integración de sistemas me permite ofrecer soluciones completas y eficientes.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-  <footer>
-   <p>
-    © 2024 Molina Facundo Todos los derechos reservados.
-   </p>
-   <div>
-    <a href="https://www.linkedin.com/in/facundo-molina-340783176/" target="_blank">
-     <i class="fab fa-linkedin">
-     </i>
-    </a>
-    <a href="https://www.github.com/facMolina" target="_blank">
-     <i class="fab fa-github">
-     </i>
-    </a>
-   </div>
-  </footer>
- </body>
+    <footer>
+        <p>© 2024 Molina Facundo Todos los derechos reservados.</p>
+        <div>
+            <a href="https://www.linkedin.com/in/facundo-molina-340783176/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.github.com/facMolina" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+</body>
 </html>
