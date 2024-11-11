@@ -1,6 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <title>Facundo Molina</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mi</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet"/>
     <style>
@@ -15,34 +18,12 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            overflow: auto;
         }
-        .container {
-            width: 90%;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-around;
-            background-color: #1b263b;
-            padding: 10px;
-            border-radius: 10px;
-        }
-        .navbar a {
-            color: #000000;
-            background-color: #ffffff;
-            padding: 10px 20px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    
         .main-container {
-            display: flex;
-            flex-direction: column;
             flex: 1;
-            overflow: auto;
         }
+    
         .content {
             display: flex;
             flex-direction: column;
@@ -52,11 +33,13 @@
             margin-top: 20px;
             flex-grow: 1;
         }
+    
         .top-row {
             display: flex;
             width: 100%;
             justify-content: space-between;
         }
+    
         .left, .right {
             width: 48%;
             margin: 10px 0;
@@ -64,6 +47,7 @@
             flex-direction: column;
             justify-content: space-between;
         }
+    
         .full-width {
             width: 100%;
             margin: 10px 0;
@@ -71,6 +55,7 @@
             flex-direction: column;
             justify-content: space-between;
         }
+    
         .box {
             background-color: #ffffff;
             padding: 15px;
@@ -81,6 +66,7 @@
             margin-left: 30px;
             margin-right: 30px;
         }
+    
         .box h2 {
             color: #14213d;
             background-color: #ffffff;
@@ -92,15 +78,18 @@
             margin-top: 0;
             margin-bottom: 5px;
         }
+    
         .box p, .box ul {
             color: #000000;
             text-align: left;
             font-size: 1em;
             margin-left: 10px;
         }
+    
         .box ul {
             padding-left: 20px;
         }
+    
         @media (max-width: 1100px) {
             .left, .right, .full-width {
                 width: 100%;
@@ -112,7 +101,11 @@
             .box h2 {
                 font-size: 1.2em;
             }
+            .top-row {
+                flex-direction: column;
+            }
         }
+    
         nav {
             display: flex;
             justify-content: center;
@@ -120,20 +113,24 @@
             background-color: rgba(0, 0, 0, 0.3);
             padding: 20px 0;
         }
+    
         .menu-icon {
             display: none;
             font-size: 2em;
             cursor: pointer;
         }
+    
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
         }
+    
         nav ul li {
             margin: 0 15px;
         }
+    
         nav ul li a {
             color: #0a1f44;
             text-decoration: none;
@@ -143,9 +140,11 @@
             font-size: 1.6em;
             font-weight: 700;
         }
+    
         nav ul li a:hover {
             background-color: #d4d4d4;
         }
+    
         footer {
             font-size: 1.3em;
             padding: 20px 0;
@@ -153,20 +152,21 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 50px;
-            margin-top: auto;
-            bottom: 0;
             background-color: transparent;
+            width: 100%;
         }
+    
         footer p {
             flex: 1;
             text-align: center;
         }
+    
         footer a {
             color: white;
             margin: 0 10px;
             text-decoration: none;
         }
+    
         .technologies {
             text-align: center;
             margin-bottom: 50px;
@@ -177,27 +177,27 @@
             margin-left: auto;
             margin-right: auto;
         }
-
+    
         .technologies h2 {
             font-size: 1.5em; 
             margin-bottom: 20px;
             color: #ffffff;
             font-weight: bold;
         }
-
+    
         .technologies .icons {
             display: flex;
             justify-content: center;
             gap: 10px; 
             flex-wrap: wrap;
         }
-
+    
         .technologies .icons .icon {
             padding: 10px; 
             border-radius: 50px;
             margin: 10px;
         }
-
+    
         .technologies .icons img {
             width: 100px; 
             height: 80px; 
@@ -223,11 +223,7 @@
                 color: white;
             }
             footer {
-                position: sticky;
-                bottom: 0;
-            }
-            .content {
-                overflow-y: auto;
+                position: relative;
             }
             .menu-icon {
                 display: block;
@@ -247,13 +243,6 @@
             }
         }
     </style>
-    <script>
-        // Esta función alterna la visibilidad de un menú de navegación.
-        function toggleMenu() {
-            const menu = document.querySelector('nav ul'); // Selecciona el elemento 'nav ul'.
-            menu.classList.toggle('show-menu'); // Alterna la clase 'show-menu' en el elemento 'nav ul'.
-        }
-    </script>
 </head>
 <body>
     <nav>
@@ -303,28 +292,26 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="technologies">
-        <h2>
-         SKILLS
-        </h2>
-        <div class="icons">
-         <div class="icon">
-           <img alt="Python logo" height="306" src="img/python.png" width="274"/>
-         </div>
-         <div class="icon">
-           <img alt="Java logo" height="306" src="img/java.png" width="274"/>
-         </div>
-         <div class="icon">
-           <img alt="Spring Boot logo" height="306" src="img/springboot.png" width="274"/>
-         </div>
-         <div class="icon">
-           <img alt="Oracle Database logo" height="306" src="img/oracle-database logo.png" width="274"/>
-         </div>
+        <div class="technologies">
+            <h2>
+             SKILLS
+            </h2>
+            <div class="icons">
+             <div class="icon">
+               <img alt="Python logo" height="306" src="img/python.png" width="274"/>
+             </div>
+             <div class="icon">
+               <img alt="Java logo" height="306" src="img/java.png" width="274"/>
+             </div>
+             <div class="icon">
+               <img alt="Spring Boot logo" height="306" src="img/springboot.png" width="274"/>
+             </div>
+             <div class="icon">
+               <img alt="Oracle Database logo" height="306" src="img/oracle-database logo.png" width="274"/>
+             </div>
+            </div>
         </div>
     </div>
-    <br>
-    <br>
     <footer>
         <p>© 2024 Molina Facundo Todos los derechos reservados.</p>
         <div>
@@ -332,5 +319,12 @@
             <a href="https://www.github.com/facMolina" target="_blank"><i class="fab fa-github"></i></a>
         </div>
     </footer>
+    <script>
+        // Esta función alterna la visibilidad de un menú de navegación.
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul'); // Selecciona el elemento 'nav ul'.
+            menu.classList.toggle('show-menu'); // Alterna la clase 'show-menu' en el elemento 'nav ul'.
+        }
+    </script>
 </body>
 </html>
