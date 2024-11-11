@@ -184,38 +184,52 @@
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
         (function() {
-            emailjs.init("F2UWc37AXoeL3pXW3"); // Reemplaza "F2UWc37AXoeL3pXW3" con tu Public Key de EmailJS
+            // Inicializa EmailJS con tu Public Key
+            emailjs.init("F2UWc37AXoeL3pXW3"); 
         })();
 
+        // Espera a que el DOM esté completamente cargado
         document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('contactForm').addEventListener('submit', function(event) {
-                event.preventDefault();
+        // Añade un evento 'submit' al formulario con id 'contactForm'
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+        // Previene el comportamiento por defecto del formulario (recargar la página)
+        event.preventDefault();
 
-                const lastSent = sessionStorage.getItem('lastSent');
-                const now = new Date().getTime();
-                if (lastSent && now - lastSent < 5 * 60 * 1000) {
-                    alert('Por favor, espera 5 minutos antes de enviar otro mensaje.');
-                    return;
-                }
+        // Obtiene el timestamp del último envío desde sessionStorage
+        const lastSent = sessionStorage.getItem('lastSent');
+        // Obtiene el timestamp actual
+        const now = new Date().getTime();
+        // Si el último envío fue hace menos de 5 minutos, muestra una alerta y detiene el envío
+        if (lastSent && now - lastSent < 5 * 60 * 1000) {
+            alert('Por favor, espera 5 minutos antes de enviar otro mensaje.');
+            return;
+        }
 
-                const templateParams = {
-                    name: document.getElementById('name').value,
-                    email: document.getElementById('email').value,
-                    message: document.getElementById('message').value
-                };
+        // Crea un objeto con los parámetros del formulario
+        const templateParams = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value
+        };
 
-                console.log('Enviando correo con los siguientes parámetros:', templateParams);
+        // Muestra en la consola los parámetros que se van a enviar
+        console.log('Enviando correo con los siguientes parámetros:', templateParams);
 
-                emailjs.send('service_xxvbs27', 'template_tyyvxlc', templateParams)
-                    .then(function(response) {
-                        console.log('Correo enviado con éxito:', response.status, response.text);
-                        alert('Mensaje enviado con éxito.');
-                        sessionStorage.setItem('lastSent', now);
-                        document.getElementById('successMessage').innerText = 'Mail enviado';
-                    }, function(error) {
-                        console.error('Error al enviar el correo:', error);
-                        alert('Error al enviar el mensaje.');
-                    });
+        // Envía el correo usando EmailJS
+        emailjs.send('service_xxvbs27', 'template_tyyvxlc', templateParams)
+            .then(function(response) {
+                // Si el envío es exitoso, muestra un mensaje en la consola y una alerta
+                console.log('Correo enviado con éxito:', response.status, response.text);
+                alert('Mensaje enviado con éxito.');
+                // Guarda el timestamp del envío en sessionStorage
+                sessionStorage.setItem('lastSent', now);
+                // Muestra un mensaje de éxito en el elemento con id 'successMessage'
+                document.getElementById('successMessage').innerText = 'Mail enviado';
+            }, function(error) {
+                // Si hay un error en el envío, muestra un mensaje en la consola y una alerta
+                console.error('Error al enviar el correo:', error);
+                alert('Error al enviar el mensaje.');
+                });
             });
         });
     </script>
